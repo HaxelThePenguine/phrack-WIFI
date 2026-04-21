@@ -1,0 +1,144 @@
+// INFO DI RETE
+
+wlan0
+IEEE 802.11ac  ESSID:"iliadbox-77E9FF"
+Mode:Managed  Frequency:5.24 GHz  Access Point: 22:66:CF:FF:97:E0
+Bit Rate=866.7 Mb/s   Tx-Power=22 dBm
+Retry short limit:7   RTS thr:off   Fragment thr:off
+Power Management:on
+Link Quality=50/70  Signal level=-60 dBm
+Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+Tx excessive retries:0  Invalid misc:10   Missed beacon:0
+
+
+SSID: iliadbox-77E9FF
+freq: 5240.0
+RX: 25205894 bytes (20469 packets)
+TX: 755569 bytes (2091 packets)
+signal: -54 dBm
+rx bitrate: 1404.0 MBit/s VHT-MCS 8 160MHz VHT-NSS 2
+tx bitrate: 866.7 MBit/s VHT-MCS 9 80MHz short GI VHT-NSS 2
+bss flags: short-slot-time
+dtim period: 2
+beacon int: 120
+
+  *-network
+       description: Wireless interface
+       product: Cannon Lake PCH CNVi WiFi
+       vendor: Intel Corporation
+       physical id: 14.3
+       bus info: pci@0000:00:14.3
+       logical name: wlan0
+       version: 10
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress msix bus_master cap_list ethernet physical wireless
+       configuration: broadcast=yes driver=iwlwifi driverversion=6.18.12+kali-amd64 firmware=46.7e3e4b69.0 9000-pu-b0-jf-b0- ip=192.168.1.48 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+       resources: irq:150 memory:a4410000-a4413fff
+
+
+  *-network
+       description: Ethernet interface
+       product: RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller
+       vendor: Realtek Semiconductor Co., Ltd.
+       physical id: 0.1
+       bus info: pci@0000:07:00.1
+       logical name: eth0
+       version: 12
+       capacity: 1Gbit/s
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress msix vpd bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=r8169 driverversion=6.18.12+kali-amd64 firmware=rtl8411-2_0.0.1 07/08/13 latency=0 link=no multicast=yes port=twisted pair
+       resources: irq:17 ioport:3000(size=256) memory:a4204000-a4204fff memory:a4200000-a4203fff
+
+// SCHEDA DI RETE PC
+
+Network controller [0280]: Intel Corporation Cannon Lake PCH CNVi WiFi [8086:a370] (rev 10)
+Subsystem: Intel Corporation Wireless-AC 9560 [8086:0034]
+Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+Latency: 0, Cache Line Size: 64 bytes
+Interrupt: pin A routed to IRQ 150
+IOMMU group: 6
+Region 0: Memory at a4410000 (64-bit, non-prefetchable) [size=16K]
+Capabilities: <access denied>
+Kernel driver in use: iwlwifi
+Kernel modules: iwlwifi
+
+Network:
+  Device-1: Intel Cannon Lake PCH CNVi WiFi driver: iwlwifi v: kernel
+    bus-ID: 00:14.3 chip-ID: 8086:a370
+  IF: wlan0 state: up mac: 14:4f:8a:95:48:59
+  Device-2: Realtek RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet
+    vendor: Acer Incorporated ALI driver: r8169 v: kernel pcie: speed: 2.5 GT/s
+    lanes: 1 port: 3000 bus-ID: 07:00.1 chip-ID: 10ec:8168
+  IF: eth0 state: down mac: 98:28:a6:10:38:31
+
+  // INFO GENERICHE PC
+
+System:
+  Host: kuroi-washi Kernel: 6.18.12+kali-amd64 arch: x86_64 bits: 64
+  Desktop: KDE Plasma v: 6.5.4 Distro: Kali GNU/Linux 2026.1 kali-rolling
+Machine:
+  Type: Laptop System: Acer product: Predator PH315-51 v: V1.26
+    serial: <superuser required>
+  Mobo: CFL model: Sienta_CFS v: V1.26 serial: <superuser required>
+    Firmware: UEFI vendor: Insyde v: 1.26 date: 03/27/2019
+Battery:
+  ID-1: BAT1 charge: 20.3 Wh (61.1%) condition: 33.2/48.9 Wh (67.8%)
+    volts: 14.22 min: 15.2
+CPU:
+  Info: 6-core model: Intel Core i7-8750H bits: 64 type: MT MCP cache:
+    L2: 1.5 MiB
+  Speed (MHz): avg: 800 min/max: 800/2200 cores: 1: 800 2: 800 3: 800 4: 800
+    5: 800 6: 800 7: 800 8: 800 9: 800 10: 800 11: 800 12: 800
+Graphics:
+  Device-1: Intel CoffeeLake-H GT2 [UHD Graphics 630] driver: i915 v: kernel
+  Device-2: NVIDIA GP106M [GeForce GTX 1060 Mobile] driver: nouveau
+    v: kernel
+  Device-3: Quanta HD Webcam driver: uvcvideo type: USB
+  Display: wayland server: X.org v: 1.21.1.21 with: Xwayland v: 24.1.9
+    compositor: kwin_wayland driver: X: loaded: modesetting unloaded: fbdev,vesa
+    dri: iris,nouveau gpu: i915 resolution: 1920x1080~144Hz
+  API: EGL v: 1.5 drivers: iris,nouveau,swrast
+    platforms: gbm,wayland,x11,surfaceless,device
+  API: OpenGL v: 4.6 compat-v: 4.3 vendor: intel mesa v: 26.0.4-1
+    renderer: Mesa Intel UHD Graphics 630 (CFL GT2)
+  API: Vulkan Message: No Vulkan data available.
+  Info: Tools: api: clinfo, eglinfo, glxinfo, vulkaninfo
+    de: kscreen-console,kscreen-doctor wl: wayland-info x11: xdriinfo,
+    xdpyinfo, xprop, xrandr
+Audio:
+  Device-1: Intel Cannon Lake PCH cAVS driver: snd_hda_intel
+  Device-2: NVIDIA GP106 High Definition Audio driver: snd_hda_intel
+  API: ALSA v: k6.18.12+kali-amd64 status: kernel-api
+  Server-1: PipeWire v: 1.6.2 status: active
+Network:
+  Device-1: Intel Cannon Lake PCH CNVi WiFi driver: iwlwifi
+  IF: wlan0 state: up mac: 14:4f:8a:95:48:59
+  Device-2: Realtek RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet
+    driver: r8169
+  IF: eth0 state: down mac: 98:28:a6:10:38:31
+Bluetooth:
+  Device-1: Intel Bluetooth 9460/9560 Jefferson Peak (JfP) driver: btusb
+    type: USB
+  Report: hciconfig ID: hci0 state: up address: 14:4F:8A:95:48:5D bt-v: 5.1
+Drives:
+  Local Storage: total: 1.14 TiB used: 65.29 GiB (5.6%)
+  ID-1: /dev/nvme0n1 vendor: Intel model: SSDPEKKW256G7 size: 238.47 GiB
+  ID-2: /dev/sda vendor: Seagate model: ST1000LM048-2E7172 size: 931.51 GiB
+Partition:
+  ID-1: / size: 68.61 GiB used: 65.02 GiB (94.8%) fs: ext4 dev: /dev/nvme0n1p6
+  ID-2: /boot/efi size: 975.1 MiB used: 304 KiB (0.0%) fs: vfat
+    dev: /dev/nvme0n1p5
+Swap:
+  ID-1: swap-1 type: partition size: 3.81 GiB used: 277.2 MiB (7.1%)
+    dev: /dev/nvme0n1p8
+Sensors:
+  System Temperatures: cpu: 35.0 C pch: 50.0 C mobo: N/A gpu: nouveau
+    temp: 36.0 C
+  Fan Speeds (rpm): N/A
+Info:
+  Memory: total: 16 GiB available: 15.47 GiB used: 4.8 GiB (31.0%)
+  Processes: 341 Uptime: 12h 41m Shell: Zsh inxi: 3.3.40

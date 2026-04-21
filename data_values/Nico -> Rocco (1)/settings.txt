@@ -1,0 +1,7 @@
+Sender: Nico
+Receiver: Rocco
+DateTime: 10:04:2026 17:51
+Peculiar_conditions: None
+Protocol: TCP
+MaxBandwith: 1000M
+MTU: 1500
