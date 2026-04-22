@@ -20,7 +20,7 @@ IPERF_INTERVAL="${IPERF_INTERVAL:-1}"
 IPERF_PROTOCOL="${IPERF_PROTOCOL:-tcp}"
 IPERF_BANDWIDTH="${IPERF_BANDWIDTH:-10M}"
 IPERF_EXTRA_ARGS="${IPERF_EXTRA_ARGS:-}"
-cmd=(iperf3 -c "$IPERF_HOST" -p "$IPERF_PORT" -t "$IPERF_DURATION" -i "$IPERF_INTERVAL" -M 1500 --json)
+cmd=(iperf3 -c "$IPERF_HOST" -p "$IPERF_PORT" -t "$IPERF_DURATION" -i "$IPERF_INTERVAL" --json)
 if [[ "${IPERF_PROTOCOL,,}" == "udp" ]]; then
   cmd+=(-u -b "$IPERF_BANDWIDTH")
 fi
@@ -28,5 +28,13 @@ if [[ -n "$IPERF_EXTRA_ARGS" ]]; then
   read -r -a extra_args <<<"$IPERF_EXTRA_ARGS"
   cmd+=("${extra_args[@]}")
 fi
-echo "Esecuzione: ${cmd[*]}"
-"${cmd[@]}" 2>&1 | tee -a "$LOG_FILE"
+if [[ "${IPERF_PROTOCOL,,}" == "udp" ]]; then
+  for length in {0..1500..250}; do
+    cmd_l=("${cmd[@]}" -l "$length")
+    echo "Esecuzione con -l $length: ${cmd_l[*]}"
+    "${cmd_l[@]}" 2>&1 | tee -a "$LOG_FILE"
+  done
+else
+  echo "Esecuzione: ${cmd[*]}"
+  "${cmd[@]}" 2>&1 | tee -a "$LOG_FILE"
+fi
