@@ -11,18 +11,18 @@ from pathlib import Path
 
 # ── Array dei parametri extra da testare ──────────────────────────────────────
 EXTRA_ARGS_LIST = [
-    "-M 88",
-    "-M 166",
-    "-M 316",
-    "-M 466",
-    "-M 500",
-    "-M 616",
-    "-M 766",
-    "-M 916",
-    "-M 1066",
-    "-M 1216",
-    "-M 1366",
-    "-M 1500",
+    "-l 88",
+    "-l 166",
+    "-l 316",
+    "-l 466",
+    "-l 500",
+    "-l 616",
+    "-l 766",
+    "-l 916",
+    "-l 1066",
+    "-l 1216",
+    "-l 1366",
+    "-l 1500",
 ]
 
 RUNS = 10  # numero di registrazioni per ogni parametro
